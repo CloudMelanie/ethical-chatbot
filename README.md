@@ -6,6 +6,6 @@ Running the Code
 
 2. Activate the environment on your local machine using "conda activate "env_name"". You can run "conda env list" first to see all the envornments on your local machine first.
 
-3. Setup the API key for acessing paid OpenAI subscription using "export OPENAI_API_KEY='your-api-key-here'". Run this in the terminal on your IDE after activating the environment.
+3. Setup the API key for acessing paid OpenAI subscription by running the command "export OPENAI_API_KEY='your-api-key-here'" after activating the environment.
 
 4. 
