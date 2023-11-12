@@ -1,28 +1,45 @@
 from openai import OpenAI
 import streamlit as st
+import os
 
 # export OPENAI_API_KEY='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'
 
-laptop_image = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/pngtree-apple-macbook-pro-green-screen-png-image_6535120.png"
+# image load
+image = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/download.jpeg"
 
-# # --- UI Configurations --- #
-# st.set_page_config(page_title="Ethical ChatBot for Making Ethical Decisions",
-#                    page_icon=laptop_image,
-#                    layout="wide")
+# displaying the image on streamlit app
+st.image(image)
 
-st.header("Ethical Chatbot")
+# title
+st.title("Ethical Chatbot")
+st.write("Welcome to our Ethical Chatbot Application. Enter a prompt: ")
 
-client = OpenAI()
+# Prompt user for input
+message = st.text_input("User: ", key="user_input")
+st.write("You asked: ", message)
 
-text = st.text_area("Write your query...")
-query = st.text_input()
+# Exit program if user inputs "quit"
+if message.lower() == "quit":
+  st.balloons()
 
-completion = client.chat.completions.create(
-  model="gpt-3.5-turbo",
-  messages=[
-    {"role": "system", "content": "You are an Ethical Chatbot who answers questions ."},
-    {"role": "user", "content": "{query}"}
-  ]
-)
+else:
+  
+  if message: 
+    
+    # else put the message into the gpt engine and print response
+    client = OpenAI()
 
-st.write(completion.choices[0].message)
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "user", "content": f"{message}"}
+        ]
+    )
+
+    answer = completion.choices[0].message
+
+    st.write("Chatbot: Thinking of a good response. Hang tight.........")
+    st.write("")
+    
+    # Display the response
+    st.markdown(f"Chatbot: {answer}")
