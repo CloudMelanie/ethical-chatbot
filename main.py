@@ -1,11 +1,12 @@
-from openai import OpenAI
+#from openai import OpenAI
+import openai
 import streamlit as st
 import os
 
 # export OPENAI_API_KEY='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'
-
+openai.api_key= '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'
 # image load
-image = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/download.jpeg"
+image = "C:/Users/melan/OneDrive/Documents/download.jpeg"
 
 # displaying the image on streamlit app
 st.image(image)
@@ -27,9 +28,9 @@ else:
   if message: 
     
     # else put the message into the gpt engine and print response
-    client = OpenAI()
+    ##client = OpenAI()
 
-    completion = client.chat.completions.create(
+    completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "user", "content": f"{message}"}
