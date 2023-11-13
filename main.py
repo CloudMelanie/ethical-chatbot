@@ -35,7 +35,7 @@ elif st.button("Negative", help="Provides an answer to the posed question from a
 elif st.button("Neutral", help="Provides an answer to the posed question from a neutral position",
             type="primary"):
     st.write("Neutral")
-    message += "Answer from a negative point of view"
+    message += "Answer from a neutral point of view"
 # Prompt user for input
 
 if message.lower() == "quit":
