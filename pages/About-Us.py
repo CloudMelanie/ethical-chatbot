@@ -44,7 +44,9 @@ st.image(image3)
 
 st.subheader("Melanie")
 use_text = """
-        Melanie is a juniour studying Computer Science and Mathematics. She is interested in....
+        Melanie is a junior at SMU majoring in Computer Science with a specialization in Cybersecurity, with minors
+         in Math and Classical Studies. She hopes to work in the tech industry and eventually use her skills in
+         computer science to help non-profits.  
         """
 st.write(use_text)
 
