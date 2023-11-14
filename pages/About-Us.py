@@ -4,7 +4,7 @@ st.title("About Us")
 
 
 # image load
-logo = "photos/download.jpeg"
+logo = "photos/group4.png"
 st.image(logo)
 
 st.subheader("Who We Are")
