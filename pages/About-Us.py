@@ -4,7 +4,7 @@ st.title("About Us")
 
 
 # image load
-logo = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/download.jpeg"
+logo = "photos/download.jpeg"
 st.image(logo)
 
 st.subheader("Who We Are")
@@ -17,7 +17,7 @@ st.write("")
 
 
 # image load
-image1 = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/IMG_3FA029931518-1.jpeg"
+image1 = "photos/IMG_3FA029931518-1.jpeg"
 st.image(image1)
 
 st.subheader("Use")
@@ -28,7 +28,7 @@ st.write(use_text)
 st.write("")
 
 
-image2 = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/IMG_3265.jpeg"
+image2 = "photos/IMG_3265.jpeg"
 st.image(image2)
 
 st.subheader("Kirk")
@@ -39,7 +39,7 @@ st.write(use_text)
 st.write("")
 
 
-image3 = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/IMG_3285.jpeg"
+image3 = "photos/IMG_3285.jpeg"
 st.image(image3)
 
 st.subheader("Melanie")
@@ -51,12 +51,12 @@ use_text = """
 st.write(use_text)
 
 
-image4 = "/Users/ogunrindekirk/Downloads/CS 3373/ethical-chatbot/photos/Profile_-_Edna_Mode.webp"
+image4 = "photos/IMG_7110_Original.jpg"
 st.image(image4)
 
 st.subheader("Laila")
 use_text = """
-        Laila is a juniour studying Computer Science and Data Science. She is interested in....
+        Laila is a junior studying Computer Science and with a minor in Data Science. She is interested in learning more about AI looks forward to seeing where it goes in the future.
         """
 st.write(use_text)
 st.write("")
