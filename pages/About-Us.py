@@ -46,7 +46,7 @@ st.subheader("Melanie")
 use_text = """
         Melanie is a junior at SMU majoring in Computer Science with a specialization in Cybersecurity, with minors
          in Math and Classical Studies. She hopes to work in the tech industry and eventually use her skills in
-         computer science to help non-profits.  
+         computer science to help non-profit organizations. 
         """
 st.write(use_text)
 
