@@ -7,8 +7,6 @@ import streamlit as st
 client = OpenAI(
     api_key='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'
 )
-image = "C:/Users/melan/OneDrive/Documents/download.jpeg"
-
 # displaying the image on streamlit app
 st.image(image)
 
