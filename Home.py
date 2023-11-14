@@ -1,5 +1,5 @@
 import streamlit as st
-
+from streamlit_extras.switch_page_button import switch_page
 # Create a container to center the buttons
 container = st.container()
 
@@ -9,16 +9,17 @@ col1, col2, col3, col4 = container.columns(4)
 
 # Add buttons to each column
 with col1:
-    home_button = st.button("Home", type="primary")
-
+    if st.button("Home", type="primary"):
+        switch_page("Home")
 with col2:
-    chat_button = st.button("Chat", type="primary")
-
+    if st.button("Chat", type="primary"):
+        switch_page("Chat")
 with col3:
-    how_to_button = st.button("How to", type="primary")
-
+    if st.button("How to", type="primary"):
+        switch_page("How to Use")
 with col4:
-    about_us_button = st.button("About Us", type="primary")
+    if st.button("About Us", type="primary"):
+        switch_page("About Us")
 
 container.markdown("<br>"*9, unsafe_allow_html=True)
 
@@ -26,5 +27,6 @@ center = st.container()
 c1, c2, c3 = center.columns(3)
 
 with c2:
-    ts_button = st.button("Terms and Conditions", type="primary")
+    if st.button("Terms and Conditions", type="primary"):
+        switch_page("Terms and Conditions")
 
