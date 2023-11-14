@@ -7,8 +7,6 @@ import streamlit as st
 client = OpenAI(
     api_key='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'
 )
-# displaying the image on streamlit app
-st.image(image)
 
 # title
 st.title("Ethical Chatbot")
