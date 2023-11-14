@@ -1,11 +1,12 @@
 # ethical-chatbot
-Repository for the ethical chatbot project for CS 3377
+Repository for the Ethical Chatbot project for CS 3377. The instructions were to connect to Chat GPT's API and create a workable website that allowed for user input and provided a response from the API.
 
-Running the Code
-1. First, clone the environment from the environment.yml file and install all the dependencies required to run the code. Do this with "conda env create -f environment.yml"
+Project description: 
+The purpose of this project is to better understand the pros and cons of ethical options.
 
-2. Activate the environment on your local machine using "conda activate "env_name"". You can run "conda env list" first to see all the environments on your local machine first.
+The application prototype or wireframe must have the following components:
 
-3. Setup the API key for acessing paid OpenAI subscription by running the command "export OPENAI_API_KEY='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'" after activating the environment.
-
-4. 
+1. Home page screen with organization name, navigation bar (about us, how to use, home) 
+2. Input box where users can type in ethical questions
+3. Three button choices, For, Against, Neutral 
+4. When one of the buttons is selected a result will be displayed.
