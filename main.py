@@ -26,17 +26,18 @@ st.write("You asked: ", message)
 
 
 
-if st.button("Positive", help="Provides an answer to the posed question from a positive position",
+if st.button(":green[Positive  :smile:] ", help="Provides an answer to the posed question from a positive position",
              type="primary"):
     message += "Answer from a positive point of view"
 
-elif st.button("Negative", help="Provides an answer to the posed question from a negative position",
+elif st.button(":white[Neutral  :neutral_face:]", help="Provides an answer to the posed question from a neutral position",
+            type="primary"):
+    message += "Answer from a neutral point of view"
+
+elif st.button(":red[Negative  :slightly_frowning_face:]", help="Provides an answer to the posed question from a negative position",
            type="primary"):
     message += "Answer from a negative point of view"
 
-elif st.button("Neutral", help="Provides an answer to the posed question from a neutral position",
-            type="primary"):
-    message += "Answer from a neutral point of view"
 # Prompt user for input
 
 if message.lower() == "quit":
