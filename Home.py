@@ -18,7 +18,7 @@ st.image(imageHome)
 # Create a container to center the buttons
 container = st.container()
 
-container.markdown("<br>"*10, unsafe_allow_html=True)
+container.markdown("<br>"*2, unsafe_allow_html=True)
 
 col1, col2, col3, col4 = container.columns(4)
 
@@ -36,7 +36,7 @@ with col4:
     if st.button("About Us", type="primary"):
         switch_page("About Us")
 
-container.markdown("<br>"*9, unsafe_allow_html=True)
+container.markdown("<br>"*4, unsafe_allow_html=True)
 
 center = st.container()
 c1, c2, c3 = center.columns(3)
@@ -44,4 +44,3 @@ c1, c2, c3 = center.columns(3)
 with c2:
     if st.button("Terms and Conditions", type="primary"):
         switch_page("Terms and Conditions")
-
