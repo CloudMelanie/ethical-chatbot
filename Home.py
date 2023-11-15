@@ -1,6 +1,5 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
-
 from streamlit_extras.colored_header import colored_header 
 
 
@@ -12,7 +11,7 @@ def header():
     )
 header()
 
-imageHome = "/Users/brianacamillus/EthicsProject/ethical-chatbot-2/photos/ethics_image.png"
+imageHome = "photos/ethics_image.png"
 st.image(imageHome)
 
 
