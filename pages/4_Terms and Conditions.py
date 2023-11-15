@@ -1,5 +1,6 @@
 import streamlit as st
 import string
+from streamlit_extras.switch_page_button import switch_page
 
 st.title("Terms Of Service")
 
@@ -38,3 +39,11 @@ user_conduct_text = """
         You agree to use GPT Lab only for lawful purposes and in accordance with these Terms of Service. Specifically, you agree not to: (a) violate any applicable law or regulation; (b) maliciously try to hack or break AI Assistants by using Prompt Injection techniques; (c) share bots that do not meet our user content standard; (d) break the system in any way. You also agree to use GPT Lab in a responsible and ethical manner and to contribute to an overall positive environment for all users. This includes refraining from any behavior that promotes, incites, or engages in hate speech, discriminatory behavior, or harassment of any kind based on race, gender, sexual orientation, religion, nationality, or any other personal characteristics. This also includes creating and using AI responsibly and ethically.
         """
 st.write(user_conduct_text)
+
+container = st.container()
+col1, col2, col3 = container.columns(3)
+
+# Add buttons to each column
+with col2:
+    if st.button("return to Home", type="primary"):
+        switch_page("Home")
