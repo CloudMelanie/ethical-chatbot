@@ -1,7 +1,20 @@
 import streamlit as st
 from streamlit_extras.switch_page_button import switch_page
 
-st.title("\tWelcome to the Ethics Chatbot")
+from streamlit_extras.colored_header import colored_header 
+
+
+def header():
+    colored_header(
+        label="Welcome to the Ethics Chatbot",
+        description= "",
+        color_name="violet-70",
+    )
+header()
+
+imageHome = "/Users/brianacamillus/EthicsProject/ethical-chatbot-2/photos/ethics_image.png"
+st.image(imageHome)
+
 
 # Create a container to center the buttons
 container = st.container()

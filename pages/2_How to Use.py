@@ -11,6 +11,10 @@ container.markdown("<br>"*18, unsafe_allow_html=True)
 col1, col2, col3 = container.columns(3)
 
 # Add buttons to each column
+with col1:
+    if st.button("Click here to start!", type ="primary"):
+        switch_page("Chat")
 with col2:
     if st.button("return to Home", type="primary"):
         switch_page("Home")
+
