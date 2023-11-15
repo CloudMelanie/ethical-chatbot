@@ -1,8 +1,9 @@
 from openai import OpenAI
 import streamlit as st
+from streamlit_extras.switch_page_button import switch_page
 
 # export OPENAI_API_KEY='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'
-#openai.api_key = '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'
+# openai.api_key = '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'
 # image load
 client = OpenAI(
     api_key='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'
@@ -20,15 +21,15 @@ pressed = True
 col1, col2, col3 = st.columns(3)
 
 if col1.button(":green[Positive  :smile:] ", help="Provides an answer to the posed question from a positive position",
-             type="primary"):
+               type="primary"):
     message += "Answer from a positive point of view. Do not include the words 'positive point of view' in the response."
 
 if col2.button(":white[Neutral  :neutral_face:]", help="Provides an answer to the posed question from a neutral position",
-            type="primary"):
+               type="primary"):
     message += "Answer from a neutral point of view. Do not include the words 'neutral point of view' in the response."
 
 if col3.button(":red[Negative  :slightly_frowning_face:]", help="Provides an answer to the posed question from a negative position",
-           type="primary"):
+               type="primary"):
     message += "Answer from a negative point of view. Do not include the words 'negative point of view' in the response."
 
 # Prompt user for input
@@ -57,3 +58,13 @@ else:
         # Display the response
         st.markdown(f"Chatbot: {answer}")
         messages.append({"role": "assistant", "content": answer})
+
+
+container = st.container()
+container.markdown("<br>"*14, unsafe_allow_html=True)
+col1, col2, col3 = container.columns(3)
+
+# Add buttons to each column
+with col2:
+    if st.button("return to Home", type="primary"):
+        switch_page("Home")
