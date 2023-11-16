@@ -18,31 +18,27 @@ st.write("")
 
 
 # image load
+
+st.subheader("Briana")
 image1 = "photos/IMG_3FA029931518-1.jpeg"
 st.image(image1)
 
-st.subheader("Briana")
 
-
-
+st.subheader("Kirk")
 image2 = "photos/IMG_3265.jpeg"
 st.image(image2)
 
-st.subheader("Kirk")
 
-
-
+st.subheader("Melanie")
 image3 = "photos/IMG_4377.png"
 st.image(image3)
 
-st.subheader("Melanie")
 
 
-
+st.subheader("Laila")
 image4 = "photos/IMG_7110_Original.jpg"
 st.image(image4)
 
-st.subheader("Laila")
 
 container = st.container()
 col1, col2, col3 = container.columns(3)
