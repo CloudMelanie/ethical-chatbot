@@ -6,7 +6,7 @@ from streamlit_extras.switch_page_button import switch_page
 # openai.api_key = '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'
 # image load
 client = OpenAI(
-    api_key='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'
+    api_key="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"
 )
 
 # title
