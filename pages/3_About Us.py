@@ -32,7 +32,7 @@ st.subheader("Kirk")
 
 
 
-image3 = "photos/IMG_3285.jpeg"
+image3 = "photos/IMG_4377.png"
 st.image(image3)
 
 st.subheader("Melanie")
