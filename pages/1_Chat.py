@@ -66,5 +66,5 @@ col1, col2, col3 = container.columns(3)
 
 # Add buttons to each column
 with col2:
-    if st.button("return to Home", type="primary"):
+    if st.button("Return to Home", type="primary"):
         switch_page("Home")

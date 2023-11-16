@@ -1,0 +1,94 @@
+Index: pages/3_About Us.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import streamlit as st\nfrom streamlit_extras.switch_page_button import switch_page\n\nst.title(\"About Us\")\n\n\n# image load\nlogo = \"photos/group4.png\"\nst.image(logo)\n\nst.subheader(\"Who We Are\")\nuse_text = \"\"\"\n        We are a group of computer science students who want to explore what Ethical Decision making looks like for us as we go into the real world.\n        \"\"\"\nst.write(use_text)\nst.write(\"\")\n\n\n\n# image load\nimage1 = \"photos/IMG_3FA029931518-1.jpeg\"\nst.image(image1)\n\nst.subheader(\"Briana\")\n\n\n\nimage2 = \"photos/IMG_3265.jpeg\"\nst.image(image2)\n\nst.subheader(\"Kirk\")\n\n\n\nimage3 = \"photos/IMG_3285.jpeg\"\nst.image(image3)\n\nst.subheader(\"Melanie\")\n\n\n\nimage4 = \"photos/IMG_7110_Original.jpg\"\nst.image(image4)\n\nst.subheader(\"Laila\")\n\ncontainer = st.container()\ncol1, col2, col3 = container.columns(3)\n\n# Add buttons to each column\nwith col2:\n    if st.button(\"return to Home\", type=\"primary\"):\n        switch_page(\"Home\")\n\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/3_About Us.py b/pages/3_About Us.py
+--- a/pages/3_About Us.py	(revision 9f5d2f1907385813a55360e0b5aeb323ecd375f3)
++++ b/pages/3_About Us.py	(date 1700092479136)
+@@ -49,7 +49,7 @@
+ 
+ # Add buttons to each column
+ with col2:
+-    if st.button("return to Home", type="primary"):
++    if st.button("Return to Home", type="primary"):
+         switch_page("Home")
+ 
+ 
+Index: pages/1_Chat.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from openai import OpenAI\nimport streamlit as st\nfrom streamlit_extras.switch_page_button import switch_page\n\n# export OPENAI_API_KEY='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'\n# openai.api_key = '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'\n# image load\nclient = OpenAI(\n    api_key='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'\n)\n\n# title\nst.title(\"Ethical Chatbot\")\nst.write(\"Welcome to our Ethical Chatbot Application. Enter a prompt: \")\n\n\nmessage = st.text_input(\"Prompt: \", key=\"user_input\")\nst.write(\"You asked: \", message)\n\npressed = True\ncol1, col2, col3 = st.columns(3)\n\nif col1.button(\":green[Positive  :smile:] \", help=\"Provides an answer to the posed question from a positive position\",\n               type=\"primary\"):\n    message += \"Answer from a positive point of view. Do not include the words 'positive point of view' in the response.\"\n\nif col2.button(\":white[Neutral  :neutral_face:]\", help=\"Provides an answer to the posed question from a neutral position\",\n               type=\"primary\"):\n    message += \"Answer from a neutral point of view. Do not include the words 'neutral point of view' in the response.\"\n\nif col3.button(\":red[Negative  :slightly_frowning_face:]\", help=\"Provides an answer to the posed question from a negative position\",\n               type=\"primary\"):\n    message += \"Answer from a negative point of view. Do not include the words 'negative point of view' in the response.\"\n\n# Prompt user for input\n\nif message.lower() == \"quit\":\n    st.balloons()\n    exit()\n\nelse:\n    if message:\n        if pressed == 0:\n            message += \"Answer from a neutral point of view\"\n\n        st.write(\"Chatbot: Thinking of a good response. Hang tight.........\")\n        st.write(\"\")\n        # else put the message into the gpt engine and print response\n        messages = [\n            {\"role\": \"user\", \"content\": f\"{message}\"}\n        ]\n        completion = client.chat.completions.create(\n            model=\"gpt-3.5-turbo\",\n            messages=messages\n        )\n        answer = completion.choices[0].message.content\n\n        # Display the response\n        st.markdown(f\"Chatbot: {answer}\")\n        messages.append({\"role\": \"assistant\", \"content\": answer})\n\n\ncontainer = st.container()\ncontainer.markdown(\"<br>\"*14, unsafe_allow_html=True)\ncol1, col2, col3 = container.columns(3)\n\n# Add buttons to each column\nwith col2:\n    if st.button(\"return to Home\", type=\"primary\"):\n        switch_page(\"Home\")\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/1_Chat.py b/pages/1_Chat.py
+--- a/pages/1_Chat.py	(revision 9f5d2f1907385813a55360e0b5aeb323ecd375f3)
++++ b/pages/1_Chat.py	(date 1700079271825)
+@@ -66,5 +66,5 @@
+ 
+ # Add buttons to each column
+ with col2:
+-    if st.button("return to Home", type="primary"):
++    if st.button("Return to Home", type="primary"):
+         switch_page("Home")
+Index: pages/2_How to Use.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import streamlit as st\nfrom streamlit_extras.switch_page_button import switch_page\n\nst.title(\"How to Use\")\n\nst.subheader(\"1. Enter an ethical related question.\")\nst.subheader(\"2. Select one of three stances: Positive, Neutral, or Negative.\")\ncontainer = st.container()\ncontainer.markdown(\"<br>\"*18, unsafe_allow_html=True)\n\ncol1, col2, col3 = container.columns(3)\n\n# Add buttons to each column\nwith col1:\n    if st.button(\"Click here to start!\", type =\"primary\"):\n        switch_page(\"Chat\")\nwith col2:\n    if st.button(\"return to Home\", type=\"primary\"):\n        switch_page(\"Home\")\n\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pages/2_How to Use.py b/pages/2_How to Use.py
+--- a/pages/2_How to Use.py	(revision 9f5d2f1907385813a55360e0b5aeb323ecd375f3)
++++ b/pages/2_How to Use.py	(date 1700092403611)
+@@ -12,9 +12,9 @@
+ 
+ # Add buttons to each column
+ with col1:
+-    if st.button("Click here to start!", type ="primary"):
++    if st.button("Click here to start", type ="primary"):
+         switch_page("Chat")
+ with col2:
+-    if st.button("return to Home", type="primary"):
++    if st.button("Return to Home", type="primary"):
+         switch_page("Home")
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"abcd87dd-25e8-44fc-bf99-b9a009c0c1a9\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/Home.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Home.py\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectColorInfo\">{\n  &quot;associatedIndex&quot;: 7\n}</component>\n  <component name=\"ProjectId\" id=\"2Y8KFcmvSaw97iSqSlSFMfNOBss\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\">{\n  &quot;keyToString&quot;: {\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\n    &quot;git-widget-placeholder&quot;: &quot;main&quot;,\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\n  }\n}</component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"abcd87dd-25e8-44fc-bf99-b9a009c0c1a9\" name=\"Changes\" comment=\"\" />\n      <created>1699901670204</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1699901670204</updated>\n      <workItem from=\"1699901671970\" duration=\"2012000\" />\n      <workItem from=\"1699903753689\" duration=\"3504000\" />\n      <workItem from=\"1699928008419\" duration=\"71000\" />\n      <workItem from=\"1699933271211\" duration=\"1025000\" />\n    </task>\n    <servers />\n  </component>\n  <component name=\"TypeScriptGeneratedFilesManager\">\n    <option name=\"version\" value=\"3\" />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"com.intellij.coverage.CoverageDataManagerImpl\">\n    <SUITE FILE_PATH=\"coverage/ethical_chatbot$main.coverage\" NAME=\"main Coverage Results\" MODIFIED=\"1699755442544\" SOURCE_PROVIDER=\"com.intellij.coverage.DefaultCoverageFileProvider\" RUNNER=\"coverage.py\" COVERAGE_BY_TEST_ENABLED=\"true\" COVERAGE_TRACING_ENABLED=\"false\" WORKING_DIRECTORY=\"$PROJECT_DIR$\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9f5d2f1907385813a55360e0b5aeb323ecd375f3)
++++ b/.idea/workspace.xml	(date 1700092808609)
+@@ -6,7 +6,9 @@
+   <component name="ChangeListManager">
+     <list default="true" id="abcd87dd-25e8-44fc-bf99-b9a009c0c1a9" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pages/1_Chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/1_Chat.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pages/2_How to Use.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/2_How to Use.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pages/3_About Us.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_About Us.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -51,7 +53,13 @@
+       <workItem from="1699901671970" duration="2012000" />
+       <workItem from="1699903753689" duration="3504000" />
+       <workItem from="1699928008419" duration="71000" />
+-      <workItem from="1699933271211" duration="1025000" />
++      <workItem from="1699933271211" duration="1133000" />
++      <workItem from="1699974241825" duration="486000" />
++      <workItem from="1699976730531" duration="191000" />
++      <workItem from="1700004995933" duration="163000" />
++      <workItem from="1700005548099" duration="401000" />
++      <workItem from="1700079160932" duration="158000" />
++      <workItem from="1700091962012" duration="840000" />
+     </task>
+     <servers />
+   </component>

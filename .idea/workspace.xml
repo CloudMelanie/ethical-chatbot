@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abcd87dd-25e8-44fc-bf99-b9a009c0c1a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/photos/IMG_4377.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home.py" beforeDir="false" afterPath="$PROJECT_DIR$/Home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/1_Chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/1_Chat.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/2_How to Use.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/2_How to Use.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/3_About Us.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/3_About Us.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,19 +30,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/melan/OneDrive/Documents/GitHub/ethical-chatbot/photos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\melan\OneDrive\Documents\GitHub\ethical-chatbot\photos" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,7 +60,14 @@
       <workItem from="1699901671970" duration="2012000" />
       <workItem from="1699903753689" duration="3504000" />
       <workItem from="1699928008419" duration="71000" />
-      <workItem from="1699933271211" duration="1025000" />
+      <workItem from="1699933271211" duration="1133000" />
+      <workItem from="1699974241825" duration="486000" />
+      <workItem from="1699976730531" duration="191000" />
+      <workItem from="1700004995933" duration="163000" />
+      <workItem from="1700005548099" duration="401000" />
+      <workItem from="1700079160932" duration="158000" />
+      <workItem from="1700091962012" duration="840000" />
+      <workItem from="1700114361848" duration="1217000" />
     </task>
     <servers />
   </component>
